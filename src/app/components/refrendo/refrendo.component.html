@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Cargar archivo Excel y generar documento Word</h2>
+
+  <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" class="form-control">
+  
+  <button 
+    (click)="onGenerateDocuments()" 
+    class="btn btn-primary mt-3"
+    [disabled]="!data.length">
+    Generar Documento Word
+  </button>
+
+  <!-- Pantalla de carga -->
+  <div *ngIf="loading" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+    <div class="text-white">
+      <p>Cargando... {{ progress }}%</p>
+      <div class="relative w-64 h-4 bg-gray-300 rounded">
+        <div 
+          class="absolute h-full bg-blue-600 rounded"
+          [style.width.%]="progress">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+.row {
+    display: flex;
+    justify-content: center; /* Centra las columnas horizontalmente */
+    gap: 10px; /* Espacio entre columnas */
+    margin: auto; /* Centra el contenedor principal */
+    width: fit-content; /* Ajusta el ancho del contenedor principal al contenido */
+  }
+  
+.column {
+  width: 500px;
+}
+
+
+.file-select {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  margin: 20px;
+
+
+}
+
+.file-select::before {
+  background-color: #5678EF;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 170px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#src-file1::before {
+  content: 'Seleccionar Archivo 1';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  /* Asegúrate de que el ancho ocupe todo el espacio disponible */
+  height: 100%; /* Asegúrate de que la altura ocupe todo el espacio disponible */
+  text-align: center; /* Centrado horizontal en caso de que no uses flex */
+}
+
+#src-file2::before {
+  content: 'Seleccionar Archivo 2';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  /* Asegúrate de que el ancho ocupe todo el espacio disponible */
+  height: 100%; /* Asegúrate de que la altura ocupe todo el espacio disponible */
+  text-align: center; /* Centrado horizontal en caso de que no uses flex */
+}
+
+
+.custom-file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.file-upload-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+

@@ -1,0 +1,59 @@
+
+<div>
+  <div class="container">
+    <h1 id="Titulo" class="text-center">Cargar Archivos Excel</h1>
+    <div class="file-upload-wrapper">
+      <label class="custom-file-upload">
+        <div class="file-select" id="src-file1">
+          <input type="file" name="src-file1" (change)="onFileChange($event, 'first')" />
+        </div>
+      </label>
+      <label class="custom-file-upload">
+        <div class="file-select" id="src-file2">
+          <input type="file" name="src-file2" (change)="onFileChange($event, 'second')" />
+        </div>
+      </label>
+    </div>
+  </div>
+  
+  
+
+  <div *ngIf="firstFileColumns.length && secondFileColumns.length" >
+    <h2
+     style="text-align: center;">Seleccionar Columnas para Transferir</h2>
+
+    <div class="row">
+      <div class="column">
+        <div class="container1" id="flexCheckDefault">
+          <h4>Columnas del Primer Archivo:</h4>
+          <div>
+            <button style="margin-right: 10px;" (click)="markAll('first')" type="button" class="btn btn-outline-primary">Marcar Todas</button>
+            <button (click)="unmarkAll('first')" type="button" class="btn btn-outline-primary">Desmarcar Todas</button>
+          </div>
+          <div *ngFor="let col of firstFileColumns" class="form-check">
+            <input class="form-check-input" type="checkbox" [value]="col" (change)="onSelectColumn($event, 'first')" [checked]="selectedFirstFileColumns.includes(col)">{{col}}
+          </div>
+          <button (click)="transferColumns()" type="button" class="btn btn-primary">Transferir Columnas</button>
+
+        </div>
+      </div>
+
+      
+    
+      <div class="column">
+        <div class="container2" id="flexCheckDefault">
+          <h4>Columnas del Segundo Archivo:</h4>
+          <button style="margin-right: 10px;" (click)="markAll('second')" type="button" class="btn btn-outline-primary">Marcar Todas</button>
+          <button (click)="unmarkAll('second')" class="btn btn-outline-primary">Desmarcar Todas</button>
+          <div *ngFor="let col of secondFileColumns" class="form-check">
+            <input class="form-check-input" type="checkbox" [value]="col" (change)="onSelectColumn($event, 'second')" [checked]="selectedSecondFileColumns.includes(col)">{{col}}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</div>
+
+

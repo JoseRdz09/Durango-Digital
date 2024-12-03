@@ -1,0 +1,35 @@
+<div class="flex flex-wrap justify-center gap-6 p-4">
+  <div *ngFor="let card of cards; let i = index"
+       class="max-w-md rounded-lg overflow-hidden shadow-lg bg-white cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+       (click)="onCardClick(i)"
+       role="button"
+       tabindex="0"
+       (keydown.enter)="onCardClick(i)">
+    <img class="w-[350px] h-[350px] object-cover" [src]="card.imageUrl" [alt]="card.title">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">{{ card.title }}</div>
+      <p class="text-gray-700 text-base">
+        {{ card.description }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="refrendoModal" tabindex="-1" aria-labelledby="refrendoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- modal-dialog-centered centra el modal -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="refrendoModalLabel">Generar Oficio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Aquí se carga el componente Refrendo -->
+        <app-refrendo></app-refrendo>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

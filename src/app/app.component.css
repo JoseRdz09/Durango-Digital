@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .square {
+    background-color: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Efecto hover para los cuadrados */
+  .square:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del cuadrado */
+  }
